@@ -122,8 +122,8 @@
 
 #?(:clj
    (defmacro defspec
-     "Analog of clojure.test.check's defspec, which expects properties returning
-  promises.  When running on the JVM, the resulting test will be
+     "Analog of clojure.test.check's `defspec`, which expects properties
+  returning promises.  When running on the JVM, the resulting test will be
   synchronous (the promise returned by [[quick-check]] will be forced).  In
   Clojurescript, `cljs.test/async` will be used.
 

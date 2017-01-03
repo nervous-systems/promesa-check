@@ -3,6 +3,14 @@
   #?(:cljs (:require-macros [promesa-check.util])))
 
 #?(:clj
+   (defmacro is "Convenience alias for the `clojure.test`/`cljs.test` `is`
+  macro."
+     [& forms]
+     (if (:ns &env)
+       `(cljs.test/is ~@forms)
+       `(clojure.test/is ~@forms))))
+
+#?(:clj
    (defmacro deftest "Expects test bodies which evaluate to promises.  On the
   JVM, the promises will forced and the test will execute synchronously.  In
   Clojurescript, `cljs.test/async` will be used.  Rejected promises will cause
