@@ -1,5 +1,5 @@
 (let [gh "https://github.com/nervous-systems/promesa-check"]
-  (defproject io.nervous/promesa-check "0.1.0"
+  (defproject io.nervous/promesa-check "0.1.1"
     :description  "Asynchronous test.check utilities"
     :url          "https://github.com/nervous-systems/promesa-check"
     :license      {:name "Unlicense" :url "http://unlicense.org/UNLICENSE"}

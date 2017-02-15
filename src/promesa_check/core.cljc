@@ -50,7 +50,8 @@
           [r1 r2]            (random/split rng)
           result-map-rose    (gen/call-gen property r1 size)
           result-map         (rose/root result-map-rose)]
-      (p/then (result-map :result)
+      (p/then (cond-> (result-map :result)
+                (exception? (result-map :result)) p/resolved)
         (fn [result]
           (if (result-ok? result)
             (assoc state :index (inc index) :size-seq size-seq :rng r2)
